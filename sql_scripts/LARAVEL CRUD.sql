@@ -34,9 +34,12 @@ CREATE TABLE Estudiantes_Clases (
     FOREIGN KEY (id_clase) REFERENCES Clases(id_clase)
 );
 
+/**GRANT all on * to laravel@localhost;
+flush privileges;*/
+
 -- Inserción de datos
-INSERT INTO Estudiantes (nombre, apellido, fecha_nacimiento, direccion) 
-VALUES 
+INSERT INTO Estudiantes (nombre, apellido, fecha_nacimiento, direccion)
+VALUES
     ('Juan', 'Perez', '2000-01-15', 'Calle Principal 123'),
     ('María', 'Gomez', '1999-05-20', 'Avenida Central 456'),
     ('Pedro', 'Rodriguez', '2001-11-10', 'Plaza Mayor 789'),
@@ -58,14 +61,14 @@ VALUES
     ('Daniel', 'Santos', '1998-10-14', 'Calle Gran Via 321'),
     ('Julia', 'Castro', '1999-09-20', 'Paseo de la Reforma 567');
 
-INSERT INTO Profesores (nombre, apellido, clase) 
-VALUES 
+INSERT INTO Profesores (nombre, apellido, clase)
+VALUES
     ('Carlos', 'Ruiz', 'Matemáticas'),
     ('Ana', 'Garcia', 'Historia'),
     ('David', 'Lopez', 'Física');
 
-INSERT INTO Clases (nombre, descripcion, profesor_id) 
-VALUES 
+INSERT INTO Clases (nombre, descripcion, profesor_id)
+VALUES
     ('Álgebra', 'Introducción a las operaciones algebraicas', 1),
     ('Historia del Arte', 'Recorrido por las principales corrientes artísticas', 2),
     ('Física Clásica', 'Estudio de los principios fundamentales de la física', 3),
