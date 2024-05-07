@@ -16,4 +16,10 @@ class MainController extends Controller
     public function estudiantes(){
         return view('estudiantes');
     }
+    public function profesores(){
+        return view('profesores');
+    }
+    public function clases(){
+        return view('clases');
+    }
 }
