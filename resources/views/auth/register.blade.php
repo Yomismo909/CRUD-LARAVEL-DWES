@@ -1,6 +1,6 @@
 <x-layouts.layout>
     <div class="flex justify-center pt-5 ">
-        <form method="POST" class="bg-primary w-30v h-50v p-8 rounded" action="{{ route('register') }}">
+        <form method="POST" class="bg-primary w-30v  min-w-96 min-h-fit  p-8 rounded" action="{{ route('register') }}">
             @csrf
 
             <!-- Name -->
