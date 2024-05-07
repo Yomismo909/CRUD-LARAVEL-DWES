@@ -1,22 +1,31 @@
 #docker compose for mysql server
 version: '0.1'
 services:
-  db:
-    image: mysql:latest
-    ports:
-      - "3307:3306"
-    #restart: always
-    environment:
-        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-        MYSQL_DATABASE:  ${DB_DATABASE}
-        MYSQL_USER: ${DB_USERNAME}
-        MYSQL_PASSWORD:  ${DB_PASSWORD}
-        #MYSQL_ROOT_USER: ${DB_USERNAME}
+    db:
+        image: mysql:latest
+        ports:
+            - "3307:3306"
+        #restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            #MYSQL_ROOT_USER: ${DB_USERNAME}
 
-    volumes:
-       - ./mysql:/var/lib/mysql
-       - ./sql_scripts:/docker-entrypoint-initdb.d
+        volumes:
+            - ./mysql:/var/lib/mysql
+            - ./sql_scripts:/docker-entrypoint-initdb.d
+
+    phpmyadmin:
+        image: phpmyadmin
+        ports:
+            - "8080:80"
+        environment:
+             PMA_HOST: db
+            #  PMA_ARBITRARY: 1
+        depends_on:
+            - db
 networks:
-  mynet:
-    driver: bridge
-
+    mynet:
+        driver: bridge
