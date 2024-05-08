@@ -17,7 +17,8 @@ class ClaseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "nombre"=>fake()->text(15),
+            "descripcion"=>fake()->text(200)
         ];
     }
 }

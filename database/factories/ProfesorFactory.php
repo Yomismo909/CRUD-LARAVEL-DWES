@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\clase;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\profesor>
@@ -17,7 +18,10 @@ class ProfesorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "nombre"=>fake()->firstName(),
+            "apellido"=>fake()->lastName(),
+            "fecha_nacimiento"=>fake()->dateTimeInInterval('-65 years', '+40 years'),
+            "direccion"=>fake()->address(),
         ];
     }
 }

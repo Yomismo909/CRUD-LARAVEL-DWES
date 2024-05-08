@@ -2,7 +2,7 @@ drop schema students;
 create schema students;
 use students;
 -- Creación de la tabla Estudiantes
-CREATE TABLE Estudiantes (
+CREATE TABLE estudiantes (
     id_estudiante INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50),
     apellido VARCHAR(50),
@@ -10,14 +10,14 @@ CREATE TABLE Estudiantes (
     direccion VARCHAR(100)
 );
 -- Creación de la tabla Profesores
-CREATE TABLE Profesores (
+CREATE TABLE profesores (
     id_profesor INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50),
     apellido VARCHAR(50),
     clase VARCHAR(50)
 );
 -- Creación de la tabla Clases
-CREATE TABLE Clases (
+CREATE TABLE clases (
     id_clase INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50),
     descripcion TEXT,
@@ -26,7 +26,7 @@ CREATE TABLE Clases (
 );
 
 -- Creación de la tabla de relación Estudiantes_Clases
-CREATE TABLE Estudiantes_Clases (
+CREATE TABLE estudiantes_clases (
     id_estudiante INT,
     id_clase INT,
     PRIMARY KEY (id_estudiante, id_clase),
@@ -38,7 +38,7 @@ CREATE TABLE Estudiantes_Clases (
 flush privileges;*/
 
 -- Inserción de datos
-INSERT INTO Estudiantes (nombre, apellido, fecha_nacimiento, direccion)
+INSERT INTO estudiantes (nombre, apellido, fecha_nacimiento, direccion)
 VALUES
     ('Juan', 'Perez', '2000-01-15', 'Calle Principal 123'),
     ('María', 'Gomez', '1999-05-20', 'Avenida Central 456'),
@@ -61,13 +61,13 @@ VALUES
     ('Daniel', 'Santos', '1998-10-14', 'Calle Gran Via 321'),
     ('Julia', 'Castro', '1999-09-20', 'Paseo de la Reforma 567');
 
-INSERT INTO Profesores (nombre, apellido, clase)
+INSERT INTO profesores (nombre, apellido, clase)
 VALUES
     ('Carlos', 'Ruiz', 'Matemáticas'),
     ('Ana', 'Garcia', 'Historia'),
     ('David', 'Lopez', 'Física');
 
-INSERT INTO Clases (nombre, descripcion, profesor_id)
+INSERT INTO clases (nombre, descripcion, profesor_id)
 VALUES
     ('Álgebra', 'Introducción a las operaciones algebraicas', 1),
     ('Historia del Arte', 'Recorrido por las principales corrientes artísticas', 2),

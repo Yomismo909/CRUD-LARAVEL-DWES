@@ -15,7 +15,7 @@ services:
 
         volumes:
             - ./mysql:/var/lib/mysql
-            - ./sql_scripts:/docker-entrypoint-initdb.d
+            #- ./sql_scripts:/docker-entrypoint-initdb.d
 
     phpmyadmin:
         image: phpmyadmin

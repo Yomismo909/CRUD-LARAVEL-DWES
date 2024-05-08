@@ -17,7 +17,10 @@ class EstudianteFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "nombre"=>fake()->firstName(),
+            "apellido"=>fake()->lastName(),
+            "fecha_nacimiento"=>fake()->dateTimeInInterval('-32 years', '+12 years'),
+            "direccion"=>fake()->address(),
         ];
     }
 }

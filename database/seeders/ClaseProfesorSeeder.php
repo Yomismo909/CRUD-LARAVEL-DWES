@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use Database\Factories\EstudianteFactory;
+use App\Models\ClaseProfesor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\estudiante;
 
-class EstudianteSeeder extends Seeder
+class ClaseProfesorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +14,6 @@ class EstudianteSeeder extends Seeder
     public function run(): void
     {
         //
-        Estudiante::factory(50)->create();
+        ClaseProfesor::Factory(15)->create();
     }
 }
