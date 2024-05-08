@@ -6,8 +6,8 @@
     </div>
     @endguest
     @auth
-        <div class=" flex h-full w-full justify-center">
-            <p class="text-3xl pt-16">Bienvenido, {{ auth()->user()->name }}</p>
+        <div class=" flex h-full w-full justify-center text-black">
+            <p class="text-5xl mt-12 p-14 pt-0 max-h-16 bg-primary-light">Bienvenido, {{ auth()->user()->name }}</p>
         </div>
     @endauth
 </x-layouts.layout>

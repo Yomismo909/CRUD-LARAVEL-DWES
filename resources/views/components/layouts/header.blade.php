@@ -14,7 +14,7 @@
                         <a href="/">Menu</a>
                     </li>
                     <li class="px-5 text-xl">
-                        <a href="estudiantes">Alumnos</a>
+                        <a href="{{route('estudiantes.index')}}">Alumnos</a>
                     </li>
                     <li class="px-5 text-xl">
                         <a href="profesores">Profesores</a>
@@ -23,7 +23,7 @@
                         <a href="clases">Clases</a>
                     </li>
                 </ul>
-                <ul class=" h-10v  flex justify-end items-center">
+                <ul class=" h-10v  flex justify-end items-center text-black">
                     <li class="px-5 text-xl">
                         <p>{{ auth()->user()->name }}</p>
                     </li>

@@ -27,7 +27,7 @@ export default {
                 "75v": "75vh",
                 "80v": "80vh",
             },
-            width:{
+            width: {
                 "10v": "10vw",
                 "15v": "15vw",
                 "20v": "20vw",
@@ -41,13 +41,15 @@ export default {
             },
             colors: {
                 "primary": "#205896",
-                "secondary":"#c9beab",
-                "accent":"#f2e9e4",
-                "primary-light":"#72a1e5"
-
+                "secondary": "#c9beab",
+                "accent": "#f2e9e4",
+                "primary-light": "#72a1e5"
             }
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        require('daisyui'),
+    ],
 };

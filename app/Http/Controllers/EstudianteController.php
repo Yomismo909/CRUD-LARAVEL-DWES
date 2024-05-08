@@ -1,19 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\estudiante;
-use App\Http\Requests\StoreestudianteRequest;
-use App\Http\Requests\UpdateestudianteRequest;
+use Illuminate\Http\Request;
 
 class EstudianteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+     public function index()
     {
         //
+        $estudiantes = Estudiante::all();
+        return view('estudiantes.index', compact('estudiantes'));
     }
 
     /**
@@ -27,7 +24,7 @@ class EstudianteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreestudianteRequest $request)
+    public function store(StoreEstudianteRequest $request)
     {
         //
     }
@@ -51,7 +48,7 @@ class EstudianteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateestudianteRequest $request, estudiante $estudiante)
+    public function update(UpdateEstudianteRequest $request, estudiante $estudiante)
     {
         //
     }

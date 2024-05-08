@@ -14,6 +14,8 @@ class ProfesorController extends Controller
     public function index()
     {
         //
+        $profesores = Profesor::all();
+        return view('profesores.index', compact('profesores'));
     }
 
     /**
@@ -30,6 +32,7 @@ class ProfesorController extends Controller
     public function store(StoreprofesorRequest $request)
     {
         //
+
     }
 
     /**

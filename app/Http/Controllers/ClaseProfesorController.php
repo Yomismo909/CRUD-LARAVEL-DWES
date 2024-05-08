@@ -14,6 +14,7 @@ class ClaseProfesorController extends Controller
     public function index()
     {
         //
+
     }
 
     /**

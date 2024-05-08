@@ -13,12 +13,12 @@ class MainController extends Controller
         /**Probablemente debamos generar aqui una pantalla de login por la vista */
         return view('index');
     }
-    public function estudiantes(){
-        return view('estudiantes');
-    }
-    public function profesores(){
-        return view('profesores');
-    }
+    // public function estudiantes(){
+    //     return view('estudiantes.index');
+    // }
+    // public function profesores(){
+    //     return view('profesores');
+    // }
     public function clases(){
         return view('clases');
     }
