@@ -26,3 +26,15 @@
     Hemos eliminado el script inicial para poder dar mas profundidad a nuestras tablas, estableciendo tablas intermedias,
     que nos permiten relacionar diferentes elementos entre si, esto lo hemos conseguido mediante el uso de las propiedades
     de las clases en la creacion del mock.
+
+    Hemos generado por fin la primera query exitosa, la de alumnos. Tambien hemos hecho lo mismo para profesores y clases.
+
+09/05/2024
+
+    Hoy me he planteado una duda respecto a las tablas intermedias; Resulta que es posible hacer queries semi manuales mediante el uso
+    de la notacion flecha de php sobre los metodos propios de este framework.
+    Con esto, he conseguido unir ambas tablas: Profesores y clases, de modo que puedo mostrar que profesor imparte cada materia.
+
+    Si bien es cierto qe el controlador de la tabla intermedia no lo vamos a utilizar, al menos por el momento, el modelo es util.
+    Puesto que mediante las queries del modelo, podemos sembrar con el factory y el seed, para tener esa conjuncion de datos, consiguiendo
+    la tercera forma normal en nuestra base de datos relacional.

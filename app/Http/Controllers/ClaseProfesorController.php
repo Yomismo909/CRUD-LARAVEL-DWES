@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\clase_profesor;
+use App\Models\claseProfesor;
 use App\Http\Requests\Storeclase_profesorRequest;
 use App\Http\Requests\Updateclase_profesorRequest;
 

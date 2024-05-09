@@ -24,6 +24,7 @@ class ProfesorController extends Controller
     public function create()
     {
         //
+        return view('profesores.create');
     }
 
     /**
@@ -32,7 +33,11 @@ class ProfesorController extends Controller
     public function store(StoreprofesorRequest $request)
     {
         //
-
+        $datosProfesor = $request->input();
+        $profesor = new profesor($datosProfesor);
+        session()->flash('status','Clase creada correctamente.');
+        $profesor->save();
+        return redirect()->route('profesores.index');
     }
 
     /**

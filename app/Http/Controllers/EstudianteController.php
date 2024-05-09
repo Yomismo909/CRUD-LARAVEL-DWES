@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\estudiante;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreEstudianteRequest;
+use App\Http\Requests\UpdateEstudianteRequest;
 
 class EstudianteController extends Controller
 {
-     public function index()
+    public function index()
     {
         //
         $estudiantes = Estudiante::all();
@@ -19,6 +21,7 @@ class EstudianteController extends Controller
     public function create()
     {
         //
+        return view('estudiantes.create');
     }
 
     /**
@@ -27,6 +30,11 @@ class EstudianteController extends Controller
     public function store(StoreEstudianteRequest $request)
     {
         //
+        $datosEstudiante = $request->input();
+        $estudiante = new estudiante($datosEstudiante);
+        session()->flash('status','Estudiante creado correctamente.');
+        $estudiante->save();
+        return redirect()->route('estudiantes.index');
     }
 
     /**
@@ -59,5 +67,9 @@ class EstudianteController extends Controller
     public function destroy(estudiante $estudiante)
     {
         //
+        $estudiante->delete();
+        //$estudiantes = Estudiante::all();
+        return redirect()->route('estudiantes.index');
+
     }
 }

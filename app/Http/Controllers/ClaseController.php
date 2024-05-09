@@ -13,7 +13,12 @@ class ClaseController extends Controller
      */
     public function index()
     {
-        //
+        //= Clase::all();
+        $clases = Clase::select(['clases.id','clases.nombre', 'clases.descripcion', 'profesors.nombre as nombre_profesor', 'profesors.apellido as apellido_profesor'])
+        ->join('clase_profesors','clase_profesors.clase_id','=','clases.id')
+        ->join('profesors', 'profesors.id','=','clase_profesors.profesor_id')
+        ->get();
+        return view('clases.index', compact('clases'));
     }
 
     /**
@@ -22,6 +27,7 @@ class ClaseController extends Controller
     public function create()
     {
         //
+        return view('clases.create');
     }
 
     /**
@@ -30,6 +36,11 @@ class ClaseController extends Controller
     public function store(StoreclaseRequest $request)
     {
         //
+        $datosClase = $request->input();
+        $clase = new clase($datosClase);
+        session()->flash('status','Clase creada correctamente.');
+        $clase->save();
+        return redirect()->route('clases.index');
     }
 
     /**
