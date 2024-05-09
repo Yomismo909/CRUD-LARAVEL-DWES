@@ -32,7 +32,7 @@ class EstudianteController extends Controller
         //
         $datosEstudiante = $request->input();
         $estudiante = new estudiante($datosEstudiante);
-        session()->flash('status','Estudiante creado correctamente.');
+        session()->flash('status','El estudiante número '.$estudiante->nombre.' fue creado correctamente.');
         $estudiante->save();
         return redirect()->route('estudiantes.index');
     }
@@ -51,6 +51,8 @@ class EstudianteController extends Controller
     public function edit(estudiante $estudiante)
     {
         //
+        // $editable = ;
+       return view('estudiantes.edit',compact('estudiante'));
     }
 
     /**
@@ -59,6 +61,11 @@ class EstudianteController extends Controller
     public function update(UpdateEstudianteRequest $request, estudiante $estudiante)
     {
         //
+        $datos = $request->input();
+        $estudiante->update($datos);
+        session()->flash('status','El estudiante número '.$estudiante->id.' fue actualizado correctamente.');
+        return redirect()->route('estudiantes.index');
+
     }
 
     /**
@@ -68,6 +75,7 @@ class EstudianteController extends Controller
     {
         //
         $estudiante->delete();
+        session()->flash('status','El estudiante número '.$estudiante->id.' fue eliminado correctamente.');
         //$estudiantes = Estudiante::all();
         return redirect()->route('estudiantes.index');
 

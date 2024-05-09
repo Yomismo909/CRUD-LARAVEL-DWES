@@ -38,3 +38,7 @@
     Si bien es cierto qe el controlador de la tabla intermedia no lo vamos a utilizar, al menos por el momento, el modelo es util.
     Puesto que mediante las queries del modelo, podemos sembrar con el factory y el seed, para tener esa conjuncion de datos, consiguiendo
     la tercera forma normal en nuestra base de datos relacional.
+
+    Hemos creado los metodos restantes del CRUD, ahroa solo queda extrapolarlos al resto de clases//modelos para finalizar la aplicacion.
+
+    Hemos incluido las validaciones de formulario en todos los metodos de creacion y actualizacion de modelos contra la base de datos.

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\clase;
 use App\Http\Requests\StoreclaseRequest;
 use App\Http\Requests\UpdateclaseRequest;
+use App\Models\profesor;
 
 class ClaseController extends Controller
 {
@@ -14,10 +15,11 @@ class ClaseController extends Controller
     public function index()
     {
         //= Clase::all();
-        $clases = Clase::select(['clases.id','clases.nombre', 'clases.descripcion', 'profesors.nombre as nombre_profesor', 'profesors.apellido as apellido_profesor'])
-        ->join('clase_profesors','clase_profesors.clase_id','=','clases.id')
-        ->join('profesors', 'profesors.id','=','clase_profesors.profesor_id')
+        $clases = Clase::select(['clases.id','clases.nombre', 'clases.descripcion', 'profesors.id as profesor_id','profesors.nombre as nombre_profesor', 'profesors.apellido as apellido_profesor'])
+        ->leftJoin('clase_profesors','clase_profesors.clase_id','=','clases.id')
+        ->leftJoin('profesors', 'clase_profesors.profesor_id','=','profesors.id')
         ->get();
+
         return view('clases.index', compact('clases'));
     }
 
@@ -57,6 +59,7 @@ class ClaseController extends Controller
     public function edit(clase $clase)
     {
         //
+        return view('clases.edit',compact('clase'));
     }
 
     /**
@@ -65,6 +68,10 @@ class ClaseController extends Controller
     public function update(UpdateclaseRequest $request, clase $clase)
     {
         //
+        $datos = $request->input();
+        $clase->update($datos);
+        session()->flash('status','El clase número '.$clase->id.' fue actualizado correctamente.');
+        return redirect()->route('clases.index');
     }
 
     /**
@@ -73,5 +80,9 @@ class ClaseController extends Controller
     public function destroy(clase $clase)
     {
         //
+        $clase->delete();
+        session()->flash('status','El clase número '.$clase->id.' fue eliminado correctamente.');
+        //$clases = clase::all();
+        return redirect()->route('clases.index');
     }
 }

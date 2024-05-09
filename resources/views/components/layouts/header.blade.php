@@ -14,7 +14,7 @@
                         <a href="/">Menu</a>
                     </li>
                     <li class="px-5 text-xl">
-                        <a href="{{route('estudiantes.index')}}">Alumnos</a>
+                        <a href="{{route('estudiantes.index')}}">Estudiantes</a>
                     </li>
                     <li class="px-5 text-xl">
                         <a href="{{route('profesores.index')}}">Profesores</a>

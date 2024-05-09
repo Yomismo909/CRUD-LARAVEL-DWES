@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Miguel Lacasa',
-            'email' => 'miguel.elmismo909@gmail.com',
+            // 'name' => 'Miguel Lacasa',
+            // 'email' => 'miguel.elmismo909@gmail.com',
         ]);
 
         $this->call([
@@ -26,7 +26,6 @@ class DatabaseSeeder extends Seeder
             ClaseSeeder::class,
             ProfesorSeeder::class,
             ClaseProfesorSeeder::class
-
         ]);
     }
 }

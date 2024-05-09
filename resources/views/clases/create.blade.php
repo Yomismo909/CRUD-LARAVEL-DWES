@@ -2,7 +2,6 @@
     <div class="flex justify-center items-center flex-col pt-5">
         <p class="text-black text-3xl">Creacion de una nueva clase</p>
         <form method="POST" action="{{ route('clases.store') }}" class="bg-primary w-30v min-w-96 min-h-fit p-8 rounded">
-
             @csrf
             <div class="mb-4">
                 <div class="flex justify-between items-center">

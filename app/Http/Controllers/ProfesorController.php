@@ -51,24 +51,33 @@ class ProfesorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(profesor $profesor)
+    public function edit(profesor $profesore)
     {
         //
+        return view('profesores.edit',compact('profesore'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateprofesorRequest $request, profesor $profesor)
+    public function update(UpdateprofesorRequest $request, profesor $profesore)
     {
         //
+        $datos = $request->input();
+        $profesore->update($datos);
+        session()->flash('status','El profesor número '.$profesore->id.' fue actualizado correctamente.');
+        return redirect()->route('profesores.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(profesor $profesor)
+    public function destroy(profesor $profesore)
     {
         //
+        $profesore->delete();
+        session()->flash('status','El profesor número '.$profesore->id.' fue eliminado correctamente.');
+        //$profesors = profesor::all();
+        return redirect()->route('profesores.index');
     }
 }
