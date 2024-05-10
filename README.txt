@@ -42,3 +42,11 @@
     Hemos creado los metodos restantes del CRUD, ahroa solo queda extrapolarlos al resto de clases//modelos para finalizar la aplicacion.
 
     Hemos incluido las validaciones de formulario en todos los metodos de creacion y actualizacion de modelos contra la base de datos.
+
+10/05/2024
+
+    Hoy vamos a realizar un poquito de estilos para finalizar, por ejemplo la pantalla de recuperacion de contraseña.
+
+    NOTAS ADICIONALES:  Las funcionalidades basicas de CRUD están completas, sin embargo, podemos ver que la vista de clases contiene una asignacion de profesor
+                        que no se puede modificar. Esto es debido a que se trata de una consulta a una tabla intermedia, que está implementada, pero todavia no he
+                        encontrado la manera de hacer esa insercion, puesto que parece lógica de laravel bastante mas avanzada de lo que hasta ahora he podido ver.
